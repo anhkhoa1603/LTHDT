@@ -15,6 +15,33 @@ public class lab1
         S = (x*y)/(float)2.0;
         return S;
     }
+    static int cau3(int x, int y)
+    {
+        return x%y;
+    }
+    static void cau4()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the temperature: ");
+        float x;
+        x = sc.nextInt();
+        System.out.println("1. Convert the temperature from Fahrenheit to Celsius");
+        System.out.println("2. Convert the temperature from Celsius to Fahrenheit");
+        System.out.print("You choose: ");
+        int n;
+        double S;
+        n = sc.nextInt();
+        switch (n) {
+            case 1:
+                S = (x - 32) * (float)(5 / 9);
+                System.out.println("Result: " + S);
+                break;
+            case 2:
+                S = (x * 1.8) + 32.0;
+                System.out.println("Result: " + S);
+                break;
+        }
+    }
     static boolean cau5(int year)
     {
         if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
@@ -22,6 +49,30 @@ public class lab1
             return true;
         }
         else return false;
+    }
+    static void cau6()
+    {
+        Scanner sc = new Scanner(System.in);
+        int x, y, z;
+
+        System.out.print("Enter x: ");
+        x = sc.nextInt();
+        System.out.print("Enter y: ");
+        y = sc.nextInt();
+        System.out.print("Enter z: ");
+        z = sc.nextInt();
+
+        int min = x;
+        if (x > y && z > y)
+        {
+            min = y;
+        }
+        else if (x > z && y > z)
+        {
+            min = z;
+        }
+
+        System.out.println("Min = " + min);
     }
     static float cau8d(int n)
     {
@@ -68,17 +119,31 @@ public class lab1
     {
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Cau 1:");
         cau1();
 
+        System.out.println("Cau 2:");
         float base, height;
         System.out.print("Enter number of base: ");
         base = sc.nextFloat();
         System.out.print("Enter number of height: ");
         height = sc.nextFloat();
         System.out.println("Area = " + cau2(base, height));
+
+        System.out.println("Cau 3:");
+        int x, y;
+        System.out.print("Enter x: ");
+        x = sc.nextInt();
+        System.out.print("Enter y: ");
+        y = sc.nextInt();
+        System.out.println("S = x % y = " + cau3(x, y));
+
+        System.out.println("Cau 4:");
+        cau4();
         
+        System.out.println("Cau 5:");
         int year;
-        System.out.print("Enter the year: ");
+        System.out.println("Enter the year: ");
         year = sc.nextInt();
         if (cau5(year))
         {
@@ -86,16 +151,22 @@ public class lab1
         }
         else System.out.println(year + " is not a leap year");
 
+        System.out.println("Cau 6:");
+        cau6();
+
+        System.out.println("Cau 8d:");
         int n;
         System.out.print("Enter n: ");
         n = sc.nextInt();
         float S = cau8d(n);
         System.out.println("S = " + S);
 
+        System.out.println("Cau 9:");
         System.out.print("Enter n: ");
         n = sc.nextInt();
         cau9(n);
 
+        System.out.println("Cau 10:");
         System.out.print("Enter n: ");
         n = sc.nextInt();
         System.out.print("S = " + cau10(n));
