@@ -41,6 +41,7 @@ public class lab1
                 System.out.println("Result: " + S);
                 break;
         }
+        sc.close();
     }
     static boolean cau5(int year)
     {
@@ -73,6 +74,7 @@ public class lab1
         }
 
         System.out.println("Min = " + min);
+        sc.close();
     }
     static float cau8d(int n)
     {
@@ -171,5 +173,6 @@ public class lab1
         System.out.print("Enter n: ");
         n = sc.nextInt();
         System.out.print("S = " + cau10(n));
+        sc.close();
     }
 }
