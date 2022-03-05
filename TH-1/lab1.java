@@ -115,6 +115,7 @@ public class lab1
         } while (n >= 10);
         return n + l_digit;
     }
+    
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
